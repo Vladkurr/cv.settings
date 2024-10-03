@@ -121,7 +121,6 @@ if (!empty($errorStr)) {
     $tabControl->Buttons(
         [
             "disabled" => ($POST_RIGHT < "W"),
-            "back_url" => "intervolga.academy_rubric_admin.php?LANG=" . LANG
         ]
     );
     ?>

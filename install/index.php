@@ -133,12 +133,12 @@ class CV_Settings extends CModule
 
     function UnInstallEvents()
     {
-        \Bitrix\Main\EventManager::getInstance()->unRegisterEventHandler($this->MODULE_ID, 'OnPageStart', $this->MODULE_ID, '\Cv\Settings\Handler', 'OnPageStart');
+        \Bitrix\Main\EventManager::getInstance()->unRegisterEventHandler("main", 'OnPageStart', $this->MODULE_ID, '\Cv\Settings\EventHandler', 'OnPageStart');
     }
 
     function InstallEvents()
     {
-        \Bitrix\Main\EventManager::getInstance()->registerEventHandler($this->MODULE_ID, 'OnPageStart', $this->MODULE_ID, '\Cv\Settings\Handler', 'OnPageStart');
+        \Bitrix\Main\EventManager::getInstance()->registerEventHandler("main", 'OnPageStart', $this->MODULE_ID, 'Cv\Settings\EventHandler', 'OnPageStart');
     }
 
     public function doUninstall()
